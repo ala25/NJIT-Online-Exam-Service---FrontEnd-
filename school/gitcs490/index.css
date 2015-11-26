@@ -1,0 +1,41 @@
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.header{
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  color: white;
+  padding: 0;
+}
+
+.cen{
+  text-align: center;
+}
+.authToggle{
+  display: none;
+  color: red;
+}
+
+ul{
+    list-style-type: none;
+    
+}
+
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+
+.panel{
+  
+  padding: 10px;
+  
+}

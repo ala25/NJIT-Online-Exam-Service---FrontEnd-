@@ -1,11 +1,11 @@
-import tweep
+import tweepy
 class TwitterAPI:
     def __init__(self):
-        consumer_key = "jDtoeXv7e5AFpxwXOWgjYPpC3"
-        consumer_secret = "6DH42jACx3lc0aucyW25mucClsy9qQzLAHfwtRN9ncOgGSZ7iH"
+        consumer_key = ""
+        consumer_secret = ""
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-        access_token = "24048591-tGAvvMMKph1VdTjKFPMWORPVFqjihldzHB0c2pKzx"
-        access_token_secret = "1uXU4iXhvuAmITG6JZ0GElmW5pcrJc2QNeHWLcdAB8sao"
+        access_token = ""
+        access_token_secret = ""
         auth.set_access_token(access_token, access_token_secret)
         self.api = tweepy.API(auth)
 
@@ -16,9 +16,17 @@ class TwitterAPI:
         list = self.api.home_timeline()
         return list
 
+    def trends(self,loc):
+        trends = self.api.trends_place(loc)
+        return trends
+
 if __name__ == "__main__":
     twitter = TwitterAPI()
     timeLine = twitter.timeLine()
-    for obj in timeLine:
-        print obj
+    globalTrends = twitter.trends(1)
+    for obj in globalTrends:
+        for s in obj[u'trends']:
+            print s[u'name']
+        
+
     
